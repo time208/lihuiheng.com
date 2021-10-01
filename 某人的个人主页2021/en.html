@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ben's BLOG</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="Bodo - Simple One Page Personal" name="description">
+<meta content="BdgPixel" name="author">
+<!--Fav-->
+<link href="images/favicon.ico" rel="shortcut icon">
+
+<!--styles-->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+<link href="css/magnific-popup.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+
+<!--fonts google-->
+<!--<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>-->
+
+<!--[if lt IE 9]>
+   <script type="text/javascript" src="js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--PRELOADER-->
+<script>
+	'use strict';
+
+	window.addEventListener('load', function () {
+		var carousels = document.querySelectorAll('.carousel');
+
+		for (var i = 0; i < carousels.length; i++) {
+			carousel(carousels[i]);
+		}
+	});
+
+	function carousel(root) {
+		var figure = root.querySelector('figure'),
+			nav = root.querySelector('nav'),
+			images = figure.children,
+			n = images.length,
+			gap = root.dataset.gap || 0,
+			bfc = 'bfc' in root.dataset,
+			theta = 2 * Math.PI / n,
+			currImage = 0;
+
+		setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+		window.addEventListener('resize', function () {
+			setupCarousel(n, parseFloat(getComputedStyle(images[0]).width));
+		});
+
+		setupNavigation();
+
+		function setupCarousel(n, s) {
+			var apothem = s / (2 * Math.tan(Math.PI / n));
+
+			figure.style.transformOrigin = '50% 50% ' + -apothem + 'px';
+
+			for (var i = 0; i < n; i++) {
+				images[i].style.padding = gap + 'px';
+			}for (i = 1; i < n; i++) {
+				images[i].style.transformOrigin = '50% 50% ' + -apothem + 'px';
+				images[i].style.transform = 'rotateY(' + i * theta + 'rad)';
+			}
+			if (bfc) for (i = 0; i < n; i++) {
+				images[i].style.backfaceVisibility = 'hidden';
+			}rotateCarousel(currImage);
+		}
+
+		function setupNavigation() {
+			nav.addEventListener('click', onClick, true);
+
+			function onClick(e) {
+				e.stopPropagation();
+
+				var t = e.target;
+				if (t.tagName.toUpperCase() != 'BUTTON') return;
+
+				if (t.classList.contains('next')) {
+					currImage++;
+				} else {
+					currImage--;
+				}
+
+				rotateCarousel(currImage);
+			}
+		}
+
+		function rotateCarousel(imageIndex) {
+			figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
+		}
+	}
+</script>
+<!--/.PRELOADER END-->
+
+<!--HEADER -->
+<div class="header">
+  <div class="for-sticky">
+	<!--LOGO-->
+	<div class="col-md-2 col-xs-6 logo">
+	  <a href="index.html"><img alt="logo" class="logo-nav" src="https://z3.ax1x.com/2021/01/02/rzRRTx.jpg"></a>
+	</div>
+	<!--/.LOGO END-->
+  </div>
+  <div class="menu-wrap">
+	<nav class="menu">
+	  <div class="menu-list">
+		<a data-scroll="" href="#home" class="active">
+		  <span>Front page</span>
+		</a>
+		<a data-scroll="" href="#about">
+		  <span>Introduction</span>
+		</a>
+		<a data-scroll="" href="#work">
+		  <span>Picture</span>
+		</a>
+		 <a data-scroll="" href="#services">
+		  <span>Skills</span>
+		</a>
+		<a data-scroll="" href="#employement">
+		  <span>Experience</span>
+		</a>
+		<a data-scroll="" href="#skill">
+		  <span>Score</span>
+		</a>
+		<a data-scroll="" href="#blog">
+		  <span>Articles</span>
+		</a>
+	  </div>
+	</nav>
+	<button class="close-button" id="close-button">CLOSE</button>
+  </div>
+  <button class="menu-button" id="open-button">
+	<span></span>
+	<span></span>
+	<span></span>
+  </button><!--/.for-sticky-->
+</div>
+<!--/.HEADER END-->
+
+<!--CONTENT WRAP-->
+<div class="content-wrap">
+  <!--CONTENT-->
+  <div class="content">
+	<!--HOME-->
+	<section id="home">
+	  <div class="container">
+		<div class="row">
+		  <div class="wrap-hero-content">
+			  <div class="hero-content">
+				<h1>HELLO!😜</h1>
+				<br>
+				<span class="typed"></span>
+			  </div>
+		  </div>
+		  <div class="mouse-icon margin-20">
+			<div class="scroll"></div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.HOME END-->
+
+	<!--ABOUT-->
+	<section id="about">
+		<div class="col-md-6 col-xs-12 no-pad">
+		  <div class="bg-about"></div>
+		</div>
+		<div class="col-md-6 col-sm-12 col-xs-12 white-col">
+		  <div class="row">
+			<!--OWL CAROUSEL2-->
+			<div class="owl-carousel2">
+			  <div class="col-md-12">
+				<div class="wrap-about">
+				  <div class="w-content">
+					<p class="head-about">
+						Some dreams can never be realized, even if they are said to be very luxurious. But if you don't say it to warm yourself, you won't get the motivation to move forward.
+					</p>
+					
+					<h5 class="name">
+					  ——JBD
+					</h5>
+				  </div>
+				</div>
+			  </div>
+			
+			  <div class="col-md-12 col-sm-12 col-xs-12 white-col">
+				<div class="row">
+				  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+					<div class="wrap-about">
+					  <table class="w-content">
+						<tr>
+						  <td class="title">Chinese Name </td>
+						  <td class="break">:</td>
+						  <td> 李辉恒</td>
+						</tr>
+						<tr>
+						  <td class="title">English Name </td>
+						  <td class="break">:</td>
+						  <td> Ben</td>
+						</tr>
+						<tr>
+						  <td class="title">Hobbies </td>
+						  <td class="break">:</td>
+						  <td> photograph,coding,travelling</td>
+						</tr>
+						<tr>
+						  <td class="title">Job </td>
+						  <td class="break">:</td>
+						  <td> student,volunteer,programeer,photographer</td>
+						</tr>
+					  </table>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<!--/.OWL CAROUSEL2 END-->
+		  </div>
+		</div>
+	  </section>
+	  <!--/.ABOUT END-->
+
+	<!--WORK-->
+	<section class="grey-bg mar-tm-10" id="work">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-3">
+			<h3 class="title-small">
+			  <span>Picture</span>
+			</h3>
+			<p class="content-detail">
+			  
+			</p>
+		  </div>
+		  <div class="col-md-9 content-right">
+			<!--PORTFOLIO IMAGE-->
+			<ul class="portfolio-image">
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG6wlt.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG6wlt.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					   <p class="desc">2018 on the NZ Air</p>
+					</div>
+
+				  </div>
+				</a>
+			  </li>
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG606P.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG606P.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					  <p class="desc">
+						2021 in the Baiyun International Airport
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </li>
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG64XV.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG64XV.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					  <p class="desc">
+						2020 Huadu Youth Maker Competition The Second Prize
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </li>
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG6ImT.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG6ImT.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					  <p class="desc">
+						Most Improved
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </li>
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG6BOf.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG6BOf.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					  <p class="desc">
+						Photographing
+					  </p>  
+					</div>
+				  </div>
+				</a>
+			  </li>
+			  <li class="col-md-6">
+				<a href="https://z3.ax1x.com/2021/08/29/hG6o0U.jpg"><img alt="image" src="https://z3.ax1x.com/2021/08/29/hG6o0U.jpg">
+				  <div class="decription-wrap">
+					<div class="image-bg">
+					  <p class="desc">
+						2020 HG Sports Meeting
+					  </p>
+					</div>
+				  </div>
+				</a>
+			  </li>
+			</ul>
+			<!--/.PORTFOLIO IMAGE END-->
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.WORK END-->
+
+	<!--SERVICES-->
+	<section class="white-bg" id="services">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-3">
+			<h3 class="title-small">
+			  <span>Skills</span>
+			</h3>
+			<p class="content-detail">
+				
+			</p>
+		  </div>
+		  <div class="col-md-9 content-right">
+			<div class="row">
+			  <ul class="listing-item">
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<h3 class="icon-use">
+					  c
+					</h3>
+					<p class="head-sm">
+						Statistics
+					</p>
+					<p class="text-grey">
+					   
+					</p>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<h3 class="icon-use">
+					  J
+					</h3>
+					<p class="head-sm">
+					  Web Designing
+					</p>
+					<p class="text-grey">
+					  
+					</p>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<h3 class="icon-use">
+					  K
+					</h3>
+					<p class="head-sm">
+					  Photographing
+					</p>
+					<p class="text-grey">
+					  
+					</p>
+				  </div>
+				</li>
+			  </ul>
+
+			  <ul class="listing-item">
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<p class="icon-use">
+					  W
+					</p>
+					<p class="head-sm">
+					  Swimming
+					</p>
+					<p class="text-grey">
+					   
+					</p>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<h3 class="icon-use">
+					  U
+					</h3>
+					<p class="head-sm">
+					  Coding
+					</p>
+					<p class="text-grey">
+					   
+					</p>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-4 col-sm-4">
+					<h3 class="icon-use">
+					  H
+					</h3>
+					<p class="head-sm">
+					  Writing
+					</p>
+					<p class="text-grey">
+					  
+					</p>
+				  </div>
+				</li>
+			  </ul>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.SERVICES END-->
+
+	<!--EMPLOYEMENT-->
+	<section class="grey-bg" id="employement">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-3">
+			<h3 class="title-small">
+			  <span>Experience</span>
+			</h3>
+			<p class="content-detail">
+			  
+			</p>
+		  </div>
+		  <div class="col-md-9 content-right">
+			<div class="row">
+			  <ul class="listing-item">
+				<li>
+				  <div class="col-md-6 col-sm-6">
+					<div class="wrap-card">
+					  <div class="card">
+						<h2 class="year">
+							HG Primary School
+						</h2>
+						<h4 class="job">
+						  2013-2019
+						</h4>
+						<p class="company">
+						  
+						</p>
+						<hr>
+						<div class="text-detail">
+						  <p>
+							
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-6 col-sm-6">
+					<div class="wrap-card">
+					  <div class="card">
+						<h2 class="year">
+						  HG Junior High School
+						</h2>
+						<p class="job">
+						  2019-2021
+						</p>
+						<p class="company">
+						  
+						</p>
+						<hr>
+						<div class="text-detail">
+						  <p>
+							
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</li>
+			  </ul>  
+			  <ul class="listing-item">
+				<li>
+				  <div class="col-md-6 col-sm-6">
+					<div class="wrap-card">
+					  <div class="card">
+						<h2 class="year">
+						  GD Experimental High school
+						</h2>
+						<p class="job">
+						  2021- 
+						</p>
+						<p class="company">
+						  
+						</p>
+						<hr>
+						<div class="text-detail">
+						  <p>
+							
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</li>
+
+				<li>
+				  <div class="col-md-6 col-sm-6">
+					<div class="wrap-card">
+					  <div class="card">
+						<h2 class="year">
+						  FUTURE
+						</h2>
+						<p class="job">
+						  UNKNOWN
+						</p>
+						<p class="company">
+						  
+						</p>
+						<hr>
+						<div class="text-detail">
+						  <p>
+							
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.EMPLOYEMENT END-->
+
+	<!--SKILLS-->
+	<section class="white-bg" id="skill">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-3">
+			<h3 class="title-small">
+			  <span>Score</span>
+			</h3>
+			<p class="content-detail">
+			  
+			</p>
+		  </div>
+		  <div class="col-md-9 content-right">
+			<!--SKILLST-->
+			<div class="skillst">
+			  <div class="skillbar" data-percent="87%">
+				<div class="title head-sm">
+				  Mathematics
+				</div>
+				<div class="count-bar">
+				  <div class="count"></div>
+				</div>
+			  </div>
+			  <div class="skillbar" data-percent="79%">
+				<div class="title head-sm">
+				  English
+				</div>
+				<div class="count-bar">
+				  <div class="count"></div>
+				</div>
+			  </div>
+			  <div class="skillbar" data-percent="93%">
+				<div class="title head-sm">
+				  Physics
+				</div>
+				<div class="count-bar">
+				  <div class="count"></div>
+				</div>
+			  </div>
+			  <div class="skillbar" data-percent="95%">
+				<div class="title head-sm">
+				  Chemistry
+				</div>
+				<div class="count-bar">
+				  <div class="count"></div>
+				</div>
+			  </div>
+			  <div class="skillbar" data-percent="96%">
+				<div class="title head-sm">
+				  IT
+				</div>
+				<div class="count-bar">
+				  <div class="count"></div>
+				</div>
+			  </div>
+			</div>
+			<!--/.SKILLST END-->
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.SKILLS END-->
+
+
+
+	<!--BLOG-->
+	<section class="grey-bg" id="blog">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-md-12">
+			<h3 class="title-small-center text-center">
+			  <span>Article</span>
+			</h3>
+			<div class="row">
+			  <div class="col-md-6 col-md-offset-3">
+				<p class="content-details text-center">
+				   
+				</p>
+			  </div>
+			</div>
+			<!--GRID BLOG-->
+			<div class="grid">
+			  <div class="grid-item">
+				<div class="wrap-article">
+				  <img alt="blog-1" class="img-circle text-center" src="https://z3.ax1x.com/2021/08/29/hG68eO.jpg">
+				  <p class="subtitle fancy">
+					<span>2020/05/11</span>
+				  </p>
+				  <a href="https://cloud.tencent.com/developer/article/1626373">
+					<h3 class="title">
+						2020 年编程语言盘点展望 
+					</h3>
+				  </a>
+				  <p class="content-blog">
+					
+				  </p>
+				</div>
+			  </div>
+
+			  <div class="grid-item">
+				<div class="wrap-article">
+				 <img alt="blog-4" class="img-circle text-center" src="https://z3.ax1x.com/2021/08/29/hG6GwD.jpg">
+				 <p class="subtitle fancy">
+					<span>2021/01/27</span>
+				  </p>
+				  <a href="https://cloud.tencent.com/developer/article/1781907">
+					<h3 class="title">
+						2021编程语言前五大盘点
+					</h3>
+				  </a>
+				  <p class="content-blog">
+					 
+				  </p>
+				</div>
+			  </div>
+
+			  <div class="grid-item">
+				<div class="wrap-article">
+				  <img alt="blog6" class="img-circle text-center" src="https://z3.ax1x.com/2021/08/29/hG6dSI.gif">
+				  <p class="subtitle fancy">
+					<span>2021/02/24</span>
+				  </p>
+				  <a href="https://blog.csdn.net/weixin_43325775/article/details/114016138?spm=1001.2014.3001.5501">
+					<h3 class="title">
+						谷歌重回中国了？谷歌恢复中国服务？
+					</h3>
+				  </a>
+				  <p class="content-blog">
+				    
+				  </p>
+				</div>
+			  </div>
+			
+
+			</div>
+			<!--/.GRID BLOG END-->
+		  </div>
+		</div>
+	  </div>
+	</section>
+	<!--/.BLOG END-->
+
+	  <div class="footer-bottom">
+		<div class="container">
+		  	<div class="row" align="center">
+				Copyright &copy; 2021.Ben 李辉恒
+		  	</div>
+		</div>
+	  </div>
+	</footer>
+	<!--/.FOOTER-END-->
+
+  <!--/.CONTENT END-->
+  </div>
+<!--/.CONTENT-WRAP END-->
+</div>
+
+
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.appear.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/classie.js" type="text/javascript"></script>
+<script src="js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="js/masonry.pkgd.min.js" type="text/javascript"></script>
+<script src="js/masonry.js" type="text/javascript"></script>
+<script src="js/smooth-scroll.min.js" type="text/javascript"></script>
+<script src="js/typed.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script src="js/jquery-1.9.1.min1.js" type="text/javascript"></script>
+<script src="js/jquery.appear1.js" type="text/javascript"></script>
+<script src="js/classie1.js" type="text/javascript"></script>
+<script src="js/owl.carousel.min1.js" type="text/javascript"></script>
+<script src="js/jquery.magnific-popup.min1.js" type="text/javascript"></script>
+<script src="js/masonry.pkgd.min1.js" type="text/javascript"></script>
+<script src="js/masonry1.js" type="text/javascript"></script>
+<script src="js/typed1.js" type="text/javascript"></script>
+<canvas class="fireworks" style="position:fixed;left:0px;top:0px;z-index:1;pointer-events:none;width:1440px;height:451px;" width="2880" height="902"></canvas>
+<script src="js/anime.min1.js"></script>
+<script src="js/onclick.effects1.js"></script>
+</body>
+</html>
